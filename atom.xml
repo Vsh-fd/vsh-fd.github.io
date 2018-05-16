@@ -72,11 +72,11 @@
   </entry>
   
   <entry>
-    <title>【杂谈】序章</title>
-    <link href="http://yoursite.com/2018/05/08/%E3%80%90%E6%9D%82%E8%B0%88%E3%80%91%E5%BA%8F%E7%AB%A0/"/>
-    <id>http://yoursite.com/2018/05/08/【杂谈】序章/</id>
+    <title>【杂谈】Hello World!</title>
+    <link href="http://yoursite.com/2018/05/08/%E3%80%90%E6%9D%82%E8%B0%88%E3%80%91Hello%20World!/"/>
+    <id>http://yoursite.com/2018/05/08/【杂谈】Hello World!/</id>
     <published>2018-05-08T10:12:24.224Z</published>
-    <updated>2018-05-09T05:52:27.016Z</updated>
+    <updated>2018-05-16T12:03:31.153Z</updated>
     
     <content type="html"><![CDATA[<p>经过了整整一天的调试<br><del>在@<a href="https://xianyu626.github.io/" target="_blank" rel="noopener">北咸冥鱼</a> 的帮助下</del><br>博客总算是建好了<br>接下来应该会发一些算法题解之类的吧…</p>]]></content>
     
