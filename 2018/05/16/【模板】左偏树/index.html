@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="概念与基本性质 左偏树(Leftist Tree)是一种可并堆的实现，是具有左偏性质的堆有序二叉树  *可并堆(Mergeable Heap)是一种抽象数据类型，它除了支持优先队列的三个基本操作(Insert, Minimum,Delete-Min)，还支持一个额外的操作——合并操作。  左偏树是一棵二叉树，它的节点除了和二叉树的节点一样具有左右子树指针(left, right)外，还有两个属性，">
+<meta name="description" content="概念与基本性质 左偏树(Leftist Tree)是一种可并堆的实现，是具有左偏性质的堆有序二叉树   可并堆(Mergeable Heap)是一种抽象数据类型，它除了支持优先队列的三个基本操作(Insert, Minimum,Delete-Min)，还支持一个额外的操作——合并操作。  左偏性质是为了使我们可以以更小的代价在优先队列的其它两个基本操作（插入节点、删除最小节点）进行后维持堆性质。">
 <meta name="keywords" content="左偏树,数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【模板】左偏树（可并堆）">
 <meta property="og:url" content="http://yoursite.com/2018/05/16/【模板】左偏树/index.html">
 <meta property="og:site_name" content="Vsh_fd&#39;s Blog">
-<meta property="og:description" content="概念与基本性质 左偏树(Leftist Tree)是一种可并堆的实现，是具有左偏性质的堆有序二叉树  *可并堆(Mergeable Heap)是一种抽象数据类型，它除了支持优先队列的三个基本操作(Insert, Minimum,Delete-Min)，还支持一个额外的操作——合并操作。  左偏树是一棵二叉树，它的节点除了和二叉树的节点一样具有左右子树指针(left, right)外，还有两个属性，">
+<meta property="og:description" content="概念与基本性质 左偏树(Leftist Tree)是一种可并堆的实现，是具有左偏性质的堆有序二叉树   可并堆(Mergeable Heap)是一种抽象数据类型，它除了支持优先队列的三个基本操作(Insert, Minimum,Delete-Min)，还支持一个额外的操作——合并操作。  左偏性质是为了使我们可以以更小的代价在优先队列的其它两个基本操作（插入节点、删除最小节点）进行后维持堆性质。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-16T12:32:08.063Z">
+<meta property="og:updated_time" content="2018-05-17T03:39:19.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【模板】左偏树（可并堆）">
-<meta name="twitter:description" content="概念与基本性质 左偏树(Leftist Tree)是一种可并堆的实现，是具有左偏性质的堆有序二叉树  *可并堆(Mergeable Heap)是一种抽象数据类型，它除了支持优先队列的三个基本操作(Insert, Minimum,Delete-Min)，还支持一个额外的操作——合并操作。  左偏树是一棵二叉树，它的节点除了和二叉树的节点一样具有左右子树指针(left, right)外，还有两个属性，">
+<meta name="twitter:description" content="概念与基本性质 左偏树(Leftist Tree)是一种可并堆的实现，是具有左偏性质的堆有序二叉树   可并堆(Mergeable Heap)是一种抽象数据类型，它除了支持优先队列的三个基本操作(Insert, Minimum,Delete-Min)，还支持一个额外的操作——合并操作。  左偏性质是为了使我们可以以更小的代价在优先队列的其它两个基本操作（插入节点、删除最小节点）进行后维持堆性质。">
 
 
 
@@ -425,13 +425,14 @@
         <h3 id="概念与基本性质"><a href="#概念与基本性质" class="headerlink" title="概念与基本性质"></a>概念与基本性质</h3><blockquote>
 <p>左偏树(Leftist Tree)是一种可并堆的实现，是具有左偏性质的堆有序二叉树</p>
 </blockquote>
-<p>*可并堆(Mergeable Heap)是一种抽象数据类型，它除了支持优先队列的三个基本操作(Insert, Minimum,Delete-Min)，还支持一个额外的操作——合并操作。</p>
+<ul>
+<li><p>可并堆(Mergeable Heap)是一种抽象数据类型，它除了支持优先队列的三个基本操作(Insert, Minimum,Delete-Min)，还支持一个额外的操作——合并操作。</p>
+</li>
+<li><p>左偏性质是为了使我们可以以更小的代价在优先队列的其它两个基本操作（插入节点、删除最小节点）进行后维持堆性质。</p>
+</li>
+</ul>
 <blockquote>
-<p>左偏树是一棵二叉树，它的节点除了和二叉树的节点一样具有左右子树指针(left, right)外，还有两个属性，键值(key)和距离(dist)<br><a id="more"></a>节点的键值小于或等于它的左右子节点的键值（小根）<br>节点的左子节点的距离不小于右子节点的距离（左偏性质）</p>
-</blockquote>
-<p>*左偏性质是为了使我们可以以更小的代价在优先队列的其它两个基本操作（插入节点、删除最小节点）进行后维持堆性质。</p>
-<blockquote>
-<p>节点的距离等于它的右子节点的距离加1</p>
+<p>左偏树是一棵二叉树，它的节点除了和二叉树的节点一样具有左右子树指针(left, right)外，还有两个属性，键值(key)和距离(dist)<br><a id="more"></a>节点的键值小于或等于它的左右子节点的键值（小根）<br>节点的左子节点的距离不小于右子节点的距离（左偏性质）<br>节点的距离等于它的右子节点的距离加1</p>
 </blockquote>
 <hr>
 <h4 id="执行操作"><a href="#执行操作" class="headerlink" title="执行操作"></a>执行操作</h4><blockquote>
