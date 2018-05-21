@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Vsh_fd&#39;s Blog">
 <meta property="og:description" content="概念与基本性质 左偏树(Leftist Tree)是一种可并堆的实现，是具有左偏性质的堆有序二叉树   可并堆(Mergeable Heap)是一种抽象数据类型，它除了支持优先队列的三个基本操作(Insert, Minimum,Delete-Min)，还支持一个额外的操作——合并操作。  左偏性质是为了使我们可以以更小的代价在优先队列的其它两个基本操作（插入节点、删除最小节点）进行后维持堆性质。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-18T15:01:49.839Z">
+<meta property="og:updated_time" content="2018-05-20T06:51:18.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【模板】左偏树（可并堆）">
 <meta name="twitter:description" content="概念与基本性质 左偏树(Leftist Tree)是一种可并堆的实现，是具有左偏性质的堆有序二叉树   可并堆(Mergeable Heap)是一种抽象数据类型，它除了支持优先队列的三个基本操作(Insert, Minimum,Delete-Min)，还支持一个额外的操作——合并操作。  左偏性质是为了使我们可以以更小的代价在优先队列的其它两个基本操作（插入节点、删除最小节点）进行后维持堆性质。">
@@ -435,7 +435,7 @@
 <p>左偏树是一棵二叉树，它的节点除了和二叉树的节点一样具有左右子树指针(left, right)外，还有两个属性，键值(key)和距离(dist)<br><a id="more"></a>节点的键值小于或等于它的左右子节点的键值（小根）<br>节点的左子节点的距离不小于右子节点的距离（左偏性质）<br>节点的距离等于它的右子节点的距离加1</p>
 </blockquote>
 <hr>
-<h4 id="执行操作"><a href="#执行操作" class="headerlink" title="执行操作"></a>执行操作</h4><blockquote>
+<h3 id="执行操作"><a href="#执行操作" class="headerlink" title="执行操作"></a>执行操作</h3><blockquote>
 <ol>
 <li>合并 - merge</li>
 <li>查询堆最小值 - find</li>
@@ -484,6 +484,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/21/【模板】树状数组/" rel="prev" title="【模板】树状数组">
+                【模板】树状数组 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -571,7 +575,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -593,7 +597,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -713,7 +717,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念与基本性质"><span class="nav-number">1.</span> <span class="nav-text">概念与基本性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#执行操作"><span class="nav-number">1.1.</span> <span class="nav-text">执行操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目来源"><span class="nav-number">3.</span> <span class="nav-text">题目来源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念与基本性质"><span class="nav-number">1.</span> <span class="nav-text">概念与基本性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行操作"><span class="nav-number">2.</span> <span class="nav-text">执行操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目来源"><span class="nav-number">4.</span> <span class="nav-text">题目来源</span></a></li></ol></div>
             
 
           </div>
