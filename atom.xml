@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-27T13:09:40.589Z</updated>
+  <updated>2018-06-19T09:23:37.105Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【杂谈】初中毕业祭</title>
+    <link href="http://yoursite.com/2018/06/19/%E3%80%90%E6%9D%82%E8%B0%88%E3%80%91%E5%88%9D%E4%B8%AD%E6%AF%95%E4%B8%9A%E7%A5%AD/"/>
+    <id>http://yoursite.com/2018/06/19/【杂谈】初中毕业祭/</id>
+    <published>2018-06-19T09:16:27.514Z</published>
+    <updated>2018-06-19T09:23:37.105Z</updated>
+    
+    <content type="html"><![CDATA[<p>好久没更新博客了呢…<br>入坑OI半年多了，又要回校要开始暑假的集训了<br>初中就这样结束了呀<br><a id="more"></a><br>中考结束也就不再是初中生了<br>世界杯也没时间看了吧？<br>心情复杂<br>对了这里记下吧我参加(guan)过 ZJOI2018 和 JSOI2018<br>因为当时没有博客，就没有写游记wa…<br>嗯…想把每场比赛都记录下来</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;好久没更新博客了呢…&lt;br&gt;入坑OI半年多了，又要回校要开始暑假的集训了&lt;br&gt;初中就这样结束了呀&lt;br&gt;
+    
+    </summary>
+    
+      <category term="杂谈" scheme="http://yoursite.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>【题解】[SCOI2011]糖果（SPFA+差分约束）</title>
