@@ -1,10 +1,10 @@
 {
   "version": "Live2DViewerEX Config 1.0",
-  "model": "yusura_pd.moc",
+  "model": "yusura_nn.moc",
   "textures": [
-    "yusura_pd.512/yusura_tex_00.png",
-    "yusura_pd.512/yusura_tex_01.png",
-    "yusura_pd.512/yusura_tex_02.png"
+    "yusura_nn.512/yusura_tex_00.png",
+    "yusura_nn.512/yusura_tex_01.png",
+    "yusura_nn.512/yusura_tex_02.png"
   ],
   "layout": {
     "center_x": 0.0,
