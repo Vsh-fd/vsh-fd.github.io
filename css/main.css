@@ -1822,7 +1822,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ecb847;
+  background: #09ffe9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2912,7 +2912,7 @@ body {
   opacity: 1;
 }
 .main-inner {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 #heart {
   animation: heartAnimate 1.33s ease-in-out infinite;
