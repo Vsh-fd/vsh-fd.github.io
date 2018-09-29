@@ -88,7 +88,7 @@ tpwidget("show");</script>
 
 
 
-  <meta name="keywords" content="SPFA,差分约束," />
+  <meta name="keywords" content="动态规划,DP," />
 
 
 
@@ -101,18 +101,18 @@ tpwidget("show");</script>
 
 
 
-<meta name="description" content="Description幼儿园里有N个小朋友，lxhgww老师现在想要给这些小朋友们分配糖果，要求每个小朋友都要分到糖果。但是小朋友们也有嫉妒心，总是会提出一些要求，比如小明不希望小红分到的糖果比他的多，于是在分配糖果的时候，lxhgww需要满足小朋友们的K个要求。幼儿园的糖果总是有限的，lxhgww想知道他至少需要准备多少个糖果，才能使得每个小朋友都能够分到糖果，并且满足小朋友们所有的要求。  I">
-<meta name="keywords" content="SPFA,差分约束">
+<meta name="description" content="题目描述求出满足以下条件的 n*m 的 01 矩阵个数：   第 i 行第 1~li 列恰好有 1 个 1。 第 i 行第 ri~m 列恰好有 1 个 1。 每列至多有 1 个 1。   补：li~ri中不能放 1（写的时候直接默认如此了不如初三小哥观察仔细）">
+<meta name="keywords" content="动态规划,DP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【题解】[SCOI2011]糖果">
-<meta property="og:url" content="http://yoursite.com/2018/05/27/【题解】[SCOI2011]糖果/index.html">
+<meta property="og:title" content="【题解】[NOIP 模拟]matrix">
+<meta property="og:url" content="http://yoursite.com/2018/09/29/【题解】[NOIP模拟]matrix/index.html">
 <meta property="og:site_name" content="Vsh_fd&#39;s Blog">
-<meta property="og:description" content="Description幼儿园里有N个小朋友，lxhgww老师现在想要给这些小朋友们分配糖果，要求每个小朋友都要分到糖果。但是小朋友们也有嫉妒心，总是会提出一些要求，比如小明不希望小红分到的糖果比他的多，于是在分配糖果的时候，lxhgww需要满足小朋友们的K个要求。幼儿园的糖果总是有限的，lxhgww想知道他至少需要准备多少个糖果，才能使得每个小朋友都能够分到糖果，并且满足小朋友们所有的要求。  I">
+<meta property="og:description" content="题目描述求出满足以下条件的 n*m 的 01 矩阵个数：   第 i 行第 1~li 列恰好有 1 个 1。 第 i 行第 ri~m 列恰好有 1 个 1。 每列至多有 1 个 1。   补：li~ri中不能放 1（写的时候直接默认如此了不如初三小哥观察仔细）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-20T10:44:28.285Z">
+<meta property="og:updated_time" content="2018-09-29T11:26:25.684Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【题解】[SCOI2011]糖果">
-<meta name="twitter:description" content="Description幼儿园里有N个小朋友，lxhgww老师现在想要给这些小朋友们分配糖果，要求每个小朋友都要分到糖果。但是小朋友们也有嫉妒心，总是会提出一些要求，比如小明不希望小红分到的糖果比他的多，于是在分配糖果的时候，lxhgww需要满足小朋友们的K个要求。幼儿园的糖果总是有限的，lxhgww想知道他至少需要准备多少个糖果，才能使得每个小朋友都能够分到糖果，并且满足小朋友们所有的要求。  I">
+<meta name="twitter:title" content="【题解】[NOIP 模拟]matrix">
+<meta name="twitter:description" content="题目描述求出满足以下条件的 n*m 的 01 矩阵个数：   第 i 行第 1~li 列恰好有 1 个 1。 第 i 行第 ri~m 列恰好有 1 个 1。 每列至多有 1 个 1。   补：li~ri中不能放 1（写的时候直接默认如此了不如初三小哥观察仔细）">
 
 
 
@@ -142,13 +142,13 @@ tpwidget("show");</script>
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/27/【题解】[SCOI2011]糖果/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/29/【题解】[NOIP模拟]matrix/"/>
 
 
 
 
 
-  <title>【题解】[SCOI2011]糖果 | Vsh_fd's Blog</title>
+  <title>【题解】[NOIP 模拟]matrix | Vsh_fd's Blog</title>
   
 
 
@@ -309,7 +309,7 @@ tpwidget("show");</script>
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/【题解】[SCOI2011]糖果/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/29/【题解】[NOIP模拟]matrix/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vsh_fd">
@@ -326,7 +326,7 @@ tpwidget("show");</script>
 
         
         
-          <h1 class="post-title" itemprop="name headline">【题解】[SCOI2011]糖果</h1>
+          <h1 class="post-title" itemprop="name headline">【题解】[NOIP 模拟]matrix</h1>
         
 
         <div class="post-meta">
@@ -339,8 +339,8 @@ tpwidget("show");</script>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-27T21:03:45+08:00">
-                2018-05-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-29T19:22:54+08:00">
+                2018-09-29
               </time>
             
 
@@ -398,7 +398,7 @@ tpwidget("show");</script>
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  889
+                  717
                 </span>
               
 
@@ -414,7 +414,7 @@ tpwidget("show");</script>
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -435,36 +435,44 @@ tpwidget("show");</script>
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>幼儿园里有N个小朋友，lxhgww老师现在想要给这些小朋友们分配糖果，要求每个小朋友都要分到糖果。但是小朋友们也有嫉妒心，总是会提出一些要求，比如小明不希望小红分到的糖果比他的多，于是在分配糖果的时候，lxhgww需要满足小朋友们的K个要求。幼儿园的糖果总是有限的，lxhgww想知道他至少需要准备多少个糖果，才能使得每个小朋友都能够分到糖果，并且满足小朋友们所有的要求。</p>
-<hr>
-<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>输入的第一行是两个整数N，K。</p>
-<p>接下来K行，表示这些点需要满足的关系，每行3个数字，X，A，B。</p>
-<p>如果X=1， 表示第A个小朋友分到的糖果必须和第B个小朋友分到的糖果一样多；</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>求出满足以下条件的 n*m 的 01 矩阵个数：</p>
+<blockquote>
+<ol>
+<li>第 i 行第 1~li 列恰好有 1 个 1。</li>
+<li>第 i 行第 ri~m 列恰好有 1 个 1。</li>
+<li>每列至多有 1 个 1。</li>
+</ol>
+</blockquote>
+<p>补：li~ri中不能放 1（写的时候直接默认如此了不如初三小哥观察仔细）</p>
 <a id="more"></a>
-<p>如果X=2， 表示第A个小朋友分到的糖果必须少于第B个小朋友分到的糖果；</p>
-<p>如果X=3， 表示第A个小朋友分到的糖果必须不少于第B个小朋友分到的糖果；</p>
-<p>如果X=4， 表示第A个小朋友分到的糖果必须多于第B个小朋友分到的糖果；</p>
-<p>如果X=5， 表示第A个小朋友分到的糖果必须不多于第B个小朋友分到的糖果；</p>
 <hr>
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>输出一行，表示lxhgww老师至少需要准备的糖果数，如果不能满足小朋友们的所有要求，就输出-1。</p>
+<h3 id="输入数据"><a href="#输入数据" class="headerlink" title="输入数据"></a>输入数据</h3><p>第一行两个整数 n,m。接下来 n 行每行 2 个整数 li,ri。</p>
 <hr>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><pre><code>5 7
-1 1 2
-2 3 2
-4 4 1
-3 4 5
-5 4 5
-2 3 5
-4 5 1
+<h3 id="输出数据"><a href="#输出数据" class="headerlink" title="输出数据"></a>输出数据</h3><p>一行一个整数表示答案。对 998244353 取模。</p>
+<hr>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><pre><code>2 6
+2 4
+5 6
 </code></pre><hr>
-<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><p>11</p>
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><pre><code>12
+</code></pre><hr>
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><blockquote>
+<p>对于 20% 的数据，n,m &lt;= 12。<br>对于 40% 的数据，n,m &lt;= 50。<br>对于 70% 的数据，n,m &lt;= 300。<br>对于 100% 的数据，n,m &lt;= 3000，1 &lt;= li &lt; ri &lt;= m。</p>
+</blockquote>
 <hr>
-<h3 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h3><p>【数据范围】<br>对于30%的数据，保证 N&lt;=100<br>对于100%的数据，保证 N&lt;=100000<br>对于所有的数据，保证 K&lt;=100000，1&lt;=X&lt;=5，1&lt;=A, B&lt;=N</p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>一道比较抽象的动态规划题。</p>
+<p>打代码时一边写一边忘，一边忘一边写，所以写篇博客加深记忆。</p>
+<p>因为每列只能放一个 1，所以我们可以把它拍成 1 行来考虑。</p>
+<p>f[ i ][ j ]表示前 i 列共放置了 j 个右区间 1 的方案数。（拒绝感性理解）</p>
+<p>转移方程：</p>
+<blockquote>
+<p>枚举 i，加上放或者不放右区间 1 的方案数。<br>越过左区间右端点时乘上需要放置的左区间 1 的方案数。</p>
+</blockquote>
+<p>具体可参考代码注释。</p>
 <hr>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p>差分约束裸题，保证博客标签多样性，维护生态平衡<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,a,b) for(re i=a;i&lt;=b;++i)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">100010</span>;</span><br><span class="line"><span class="keyword">int</span> n,k,cnt=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> head[N&lt;&lt;<span class="number">2</span>],nxt[N&lt;&lt;<span class="number">2</span>],to[N&lt;&lt;<span class="number">2</span>],val[N&lt;&lt;<span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> vis[N],sum[N],used[N];</span><br><span class="line">ll ans=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll f=<span class="number">1</span>,x=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span>(ch&gt;<span class="string">'9'</span> <span class="keyword">or</span> ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span>(ch&gt;=<span class="string">'0'</span> <span class="keyword">and</span> ch&lt;=<span class="string">'9'</span>)&#123;x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>;ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    to[++cnt]=y;</span><br><span class="line">    nxt[cnt]=head[x];</span><br><span class="line">    head[x]=cnt;</span><br><span class="line">    val[cnt]=v;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;q;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">spfa</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">        <span class="keyword">int</span> u=q.front();</span><br><span class="line">        vis[u]=<span class="number">0</span>;q.pop();</span><br><span class="line">        <span class="keyword">for</span>(re i=head[u];i;i=nxt[i])&#123;</span><br><span class="line">            <span class="keyword">int</span> v=to[i];</span><br><span class="line">            <span class="keyword">if</span>(sum[v]&lt;sum[u]+val[i])&#123;</span><br><span class="line">                sum[v]=sum[u]+val[i];</span><br><span class="line">                used[v]++;</span><br><span class="line">                <span class="keyword">if</span>(used[v]&gt;n)</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(!vis[v])</span><br><span class="line">                    vis[v]=<span class="number">1</span>,q.push(v); </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    n=read();k=read();</span><br><span class="line">    <span class="keyword">while</span>(k--)&#123;</span><br><span class="line">        <span class="keyword">int</span> opt,a,b;</span><br><span class="line">        opt=read(),a=read(),b=read();</span><br><span class="line">        <span class="keyword">switch</span>(opt)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                add(a,b,<span class="number">0</span>);</span><br><span class="line">                add(b,a,<span class="number">0</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                <span class="keyword">if</span>(a==b)&#123;</span><br><span class="line">                    <span class="built_in">puts</span>(<span class="string">"-1"</span>);</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                add(a,b,<span class="number">1</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                add(b,a,<span class="number">0</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">                <span class="keyword">if</span>(a==b)&#123;</span><br><span class="line">                    <span class="built_in">puts</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">                    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                add(b,a,<span class="number">1</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">                add(a,b,<span class="number">0</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    rep(i,<span class="number">1</span>,n)</span><br><span class="line">        vis[i]=<span class="number">1</span>,sum[i]=<span class="number">1</span>,q.push(i);</span><br><span class="line">    <span class="keyword">if</span>(!spfa())&#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">"-1"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    rep(i,<span class="number">1</span>,n)</span><br><span class="line">        ans+=sum[i];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>都是标准操作，就不注释了（逃</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,a,b) for(re i=a;i&lt;=b;++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> drep(i,a,b) for(re i=a;i&gt;=b;--i)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD=<span class="number">998244353</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll x=<span class="number">0</span>;<span class="keyword">bool</span> f=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch)) f^=!(ch^<span class="string">'-'</span>),ch=getchar();</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch)) x=((x+(x&lt;&lt;<span class="number">2</span>))&lt;&lt;<span class="number">1</span>)+(ch^<span class="number">48</span>),ch=getchar();</span><br><span class="line">    <span class="keyword">return</span> f?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Online_Judge</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">		freopen(<span class="string">"matrix.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">		freopen(<span class="string">"matrix.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br><span class="line">ll n,m,l[<span class="number">3050</span>],r[<span class="number">3050</span>],f[<span class="number">3050</span>][<span class="number">3050</span>],lll[<span class="number">3050</span>],rr[<span class="number">3050</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//    Online_Judge();</span></span><br><span class="line">    f[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	n=read(),m=read();</span><br><span class="line">	rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">		l[i]=read(),r[i]=read();</span><br><span class="line">		lll[l[i]]++;</span><br><span class="line">		rr[r[i]]++;</span><br><span class="line">	&#125;</span><br><span class="line">	rep(i,<span class="number">1</span>,m)&#123;</span><br><span class="line">        lll[i]+=lll[i<span class="number">-1</span>];</span><br><span class="line">		rr[i]+=rr[i<span class="number">-1</span>];</span><br><span class="line">		<span class="comment">//统计区间放置 1 数量前缀和</span></span><br><span class="line">		f[i][<span class="number">0</span>]=f[i<span class="number">-1</span>][<span class="number">0</span>];</span><br><span class="line">		rep(j,<span class="number">1</span>,i) f[i][j]=f[i<span class="number">-1</span>][j<span class="number">-1</span>]*(rr[i]-(j<span class="number">-1</span>))+f[i<span class="number">-1</span>][j],f[i][j]%=MOD;</span><br><span class="line">		<span class="comment">//分别举出第 i 列放右区间 1 或不放右区间 1 时的方案数求和并取模</span></span><br><span class="line">		rep(j,lll[i<span class="number">-1</span>],lll[i]<span class="number">-1</span>) rep(k,<span class="number">0</span>,i) f[i][k]=f[i][k]*(i-k-j),f[i][k]%=MOD;</span><br><span class="line">		<span class="comment">//rep(j,lll[i-1],lll[i]-1) 表示左区间需要再放置 lll[ i ]-lll[ i-1 ] 个 1。</span></span><br><span class="line">		<span class="comment">//乘上前 i 列共放 k 个右区间 1 时左区间 1 放置方案数并取模</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,f[m][n]);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h3><p><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2330" target="_blank" rel="noopener">BZOJ 2330 [SCOI2011]糖果</a></p>
+<h3 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h3><p>暂无</p>
 
       
     </div>
@@ -482,9 +490,7 @@ tpwidget("show");</script>
       
         <div class="post-tags">
           
-            <a href="/tags/SPFA/" rel="tag"><i class="fa fa-tag"></i> SPFA</a>
-          
-            <a href="/tags/差分约束/" rel="tag"><i class="fa fa-tag"></i> 差分约束</a>
+            <a href="/tags/动态规划-DP/" rel="tag"><i class="fa fa-tag"></i> 动态规划,DP</a>
           
         </div>
       
@@ -497,8 +503,8 @@ tpwidget("show");</script>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/24/【题解】[JSOI2004]平衡点 吊打XXX/" rel="next" title="【题解】[JSOI2004]平衡点 / 吊打XXX">
-                <i class="fa fa-chevron-left"></i> 【题解】[JSOI2004]平衡点 / 吊打XXX
+              <a href="/2018/09/25/【题解】[ZqlwMatt 原创题]青蛙 (zby)/" rel="next" title="【题解】[ZqlwMatt 原创题]青蛙 (zby)">
+                <i class="fa fa-chevron-left"></i> 【题解】[ZqlwMatt 原创题]青蛙 (zby)
               </a>
             
           </div>
@@ -506,10 +512,6 @@ tpwidget("show");</script>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/19/【杂谈】初中毕业祭/" rel="prev" title="【杂谈】初中毕业祭">
-                【杂谈】初中毕业祭 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -739,7 +741,7 @@ tpwidget("show");</script>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sample-Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sample-Output"><span class="nav-number">5.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HINT"><span class="nav-number">6.</span> <span class="nav-text">HINT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">7.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目来源"><span class="nav-number">8.</span> <span class="nav-text">题目来源</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入数据"><span class="nav-number">2.</span> <span class="nav-text">输入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出数据"><span class="nav-number">3.</span> <span class="nav-text">输出数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入"><span class="nav-number">4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出"><span class="nav-number">5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据范围"><span class="nav-number">6.</span> <span class="nav-text">数据范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题思路"><span class="nav-number">7.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">8.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目来源"><span class="nav-number">9.</span> <span class="nav-text">题目来源</span></a></li></ol></div>
             
 
           </div>
