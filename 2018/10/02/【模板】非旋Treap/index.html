@@ -88,7 +88,7 @@ tpwidget("show");</script>
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Treap," />
 
 
 
@@ -101,16 +101,20 @@ tpwidget("show");</script>
 
 
 
-<meta name="description" content="We live in every moment but this one.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Vsh_fd&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/categories/杂谈/index.html">
+<meta name="description" content="概念与基本性质 Treap = Tree + Heap，即是一棵同时满足二叉搜索树和堆性质的二叉树Treap 有一个随机附加域满足堆的性质，其结构相当于以随机数据插入的二叉搜索树其基本操作的期望时间复杂度为 O(log n)  相对于其他的平衡二叉搜索树，Treap的特点是实现简单，且能基本实现随机平衡的结构。">
+<meta name="keywords" content="Treap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【学习笔记】非旋Treap">
+<meta property="og:url" content="http://yoursite.com/2018/10/02/【模板】非旋Treap/index.html">
 <meta property="og:site_name" content="Vsh_fd&#39;s Blog">
-<meta property="og:description" content="We live in every moment but this one.">
+<meta property="og:description" content="概念与基本性质 Treap = Tree + Heap，即是一棵同时满足二叉搜索树和堆性质的二叉树Treap 有一个随机附加域满足堆的性质，其结构相当于以随机数据插入的二叉搜索树其基本操作的期望时间复杂度为 O(log n)  相对于其他的平衡二叉搜索树，Treap的特点是实现简单，且能基本实现随机平衡的结构。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s1.ax1x.com/2018/05/09/CwPhzn.png">
+<meta property="og:updated_time" content="2018-09-30T05:26:03.451Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vsh_fd&#39;s Blog">
-<meta name="twitter:description" content="We live in every moment but this one.">
+<meta name="twitter:title" content="【学习笔记】非旋Treap">
+<meta name="twitter:description" content="概念与基本性质 Treap = Tree + Heap，即是一棵同时满足二叉搜索树和堆性质的二叉树Treap 有一个随机附加域满足堆的性质，其结构相当于以随机数据插入的二叉搜索树其基本操作的期望时间复杂度为 O(log n)  相对于其他的平衡二叉搜索树，Treap的特点是实现简单，且能基本实现随机平衡的结构。">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/05/09/CwPhzn.png">
 
 
 
@@ -140,13 +144,13 @@ tpwidget("show");</script>
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/杂谈/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/02/【模板】非旋Treap/"/>
 
 
 
 
 
-  <title>分类: 杂谈 | Vsh_fd's Blog</title>
+  <title>【学习笔记】非旋Treap | Vsh_fd's Blog</title>
   
 
 
@@ -165,7 +169,7 @@ tpwidget("show");</script>
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 <a href="https://github.com/Vsh-fd" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -293,55 +297,232 @@ tpwidget("show");</script>
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>杂谈<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/02/【模板】非旋Treap/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vsh_fd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/qwq.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vsh_fd's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/10/02/【杂谈】初中毕业祭/" itemprop="url">
-              
-                <span itemprop="name">【杂谈】初中毕业祭</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">【学习笔记】非旋Treap</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-02T18:15:16+08:00"
-              content="2018-10-02" >
-          10-02
-        </time>
-      </div>
+        <div class="post-meta">
+                  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T18:15:16+08:00">
+                2018-10-02
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/模板/" itemprop="url" rel="index">
+                    <span itemprop="name">模板</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 误人子弟
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,304
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="概念与基本性质"><a href="#概念与基本性质" class="headerlink" title="概念与基本性质"></a>概念与基本性质</h3><blockquote>
+<p>Treap = Tree + Heap，即是一棵同时满足二叉搜索树和堆性质的二叉树<br>Treap 有一个随机附加域满足堆的性质，其结构相当于以随机数据插入的二叉搜索树<br>其基本操作的期望时间复杂度为 O(log n)</p>
+</blockquote>
+<p>相对于其他的平衡二叉搜索树，Treap的特点是实现简单，且能基本实现随机平衡的结构。</p>
+<a id="more"></a>
+<hr>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><blockquote>
+<ol>
+<li>插入和删除</li>
+<li>访问某位置</li>
+<li>查询某数所在的位置</li>
+</ol>
+</blockquote>
+<hr>
+<h3 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h3><p>本题目的是构造名次树来维护一个有序序列<br>为了在保证堆的性质的同时进行如上操作，我们引入下列函数：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">cut</span><span class="params">(u, k)</span></span>      <span class="comment">//将以 u 为根节点的子树在第 k 个节点后切开，并返回切开后两树根节点。</span></span><br><span class="line"><span class="function"><span class="title">merge</span><span class="params">(l, r)</span></span>    <span class="comment">//在维护堆性质的同时将的两棵 Treap 合并为一棵，并返回合并后的根节点。</span></span><br></pre></td></tr></table></figure></p>
+<p>每次cut的位置大概如下：<br><img src="https://s1.ax1x.com/2018/05/09/CwPhzn.png" alt="CwPhzn.png"></p>
+<h4 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h4><blockquote>
+<p>插入 - insert = cut + merge + merge<br>删除 - delete = split + split + merge ⇒ O(log n)<br>排名查询/数值查询 - search ：通过二叉排序树的性质进行查找<br>前驱 - last：将所有比 x 小的数切下，找到其中最大的数后，再合并<br>后继 - next：将所有比 x 小的数（包括）切下，在剩下的树中找出最小的数后，再合并</p>
+</blockquote>
+<hr>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,a,b) for(re i=a;i&lt;=b;++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Tnode</span>&#123;</span>     <span class="comment">//记录节点状态</span></span><br><span class="line">	<span class="keyword">int</span> l,r,val,siz,heap;</span><br><span class="line"><span class="comment">//l,r为节点左右子树，val节点数值 ，siz节点子树大小，heap随机生成</span></span><br><span class="line">&#125; t[<span class="number">100100</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">aft</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> l,r;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> n,root;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ll f=<span class="number">1</span>,x=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> ch;</span><br><span class="line">	<span class="keyword">do</span>&#123;ch=getchar();<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;&#125;<span class="keyword">while</span>(ch&lt;<span class="string">'0'</span> <span class="keyword">or</span> ch&gt;<span class="string">'9'</span>);</span><br><span class="line">	<span class="keyword">do</span>&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;<span class="keyword">while</span>(ch&gt;=<span class="string">'0'</span> <span class="keyword">and</span> ch&lt;=<span class="string">'9'</span>);</span><br><span class="line">	<span class="keyword">return</span> f*x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> u)</span></span>&#123;			<span class="comment">//更新以u为根的子树的siz</span></span><br><span class="line">	t[u].siz=t[t[u].l].siz+t[t[u].r].siz+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> aft <span class="title">cut</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> k)</span></span>&#123;		<span class="comment">//从以u为根的子树上割下k个点</span></span><br><span class="line">	aft ans=&#123;<span class="number">0</span>,<span class="number">0</span>&#125;; 		<span class="comment">//记录切割后左右子树的根节点</span></span><br><span class="line">	<span class="keyword">if</span>(!u) <span class="keyword">return</span> ans;</span><br><span class="line">	<span class="keyword">int</span> lsize=t[t[u].l].siz+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(k&gt;=lsize)&#123;		<span class="comment">//若需要切下的点比整个左子树多，从右子树继续割</span></span><br><span class="line">		ans=cut(t[u].r,k-lsize);</span><br><span class="line">		t[u].r=ans.l;</span><br><span class="line">		ans.l=u;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		ans=cut(t[u].l,k);</span><br><span class="line">		t[u].l=ans.r;</span><br><span class="line">		ans.r=u;</span><br><span class="line">	&#125;</span><br><span class="line">	update(u);			<span class="comment">//更新以u为根节点的子树的siz</span></span><br><span class="line">	<span class="keyword">return</span> ans;		<span class="comment">//返回左右子树根节点</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;       <span class="comment">//将两棵树合并（按照heap值（小根堆））并返回根节点</span></span><br><span class="line">	<span class="keyword">if</span>(!l) <span class="keyword">return</span> r;	<span class="comment">//若左子树为空，返回右子树</span></span><br><span class="line">	<span class="keyword">if</span>(!r) <span class="keyword">return</span> l;</span><br><span class="line">	<span class="keyword">if</span>(t[l].heap&lt;t[r].heap)&#123;    <span class="comment">//若左子树根节点heap比右子树小，将右子树与左子树的右儿子merge</span></span><br><span class="line">		t[l].r=merge(t[l].r,r);</span><br><span class="line">		update(l);</span><br><span class="line">		<span class="keyword">return</span> l;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;		<span class="comment">//左子树与右子树左儿子merge</span></span><br><span class="line">		t[r].l=merge(l,t[r].l);</span><br><span class="line">		update(r);</span><br><span class="line">		<span class="keyword">return</span> r;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rank</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;    <span class="comment">//查询有多少个数严格比x小</span></span><br><span class="line">	<span class="keyword">int</span> tmp=root,ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(tmp)&#123;</span><br><span class="line">		<span class="keyword">if</span>(x&gt;t[tmp].val)&#123;</span><br><span class="line">			ans+=t[t[tmp].l].siz+<span class="number">1</span>;</span><br><span class="line">			tmp=t[tmp].r;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> tmp=t[tmp].l;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">ins</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;	<span class="comment">//插入操作</span></span><br><span class="line">	t[++cnt].val=x;</span><br><span class="line">	t[cnt].heap=rand();  <span class="comment">//随机生成heap值，使树保持相对平衡</span></span><br><span class="line">	t[cnt].siz=<span class="number">1</span>;</span><br><span class="line">	aft p=cut(root,rank(x));</span><br><span class="line">	<span class="comment">//查找x在树中的rank，将比x小的数从树中切下</span></span><br><span class="line">	root=merge(merge(p.l,cnt),p.r);</span><br><span class="line">	<span class="comment">//先将x与左子树合并，再将左子树和右子树合并，并更新根节点Root</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">del</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;      <span class="comment">//删除操作</span></span><br><span class="line">	aft p1=cut(root,rank(x));</span><br><span class="line">	aft p2=cut(p1.r,<span class="number">1</span>);</span><br><span class="line">	root=merge(p1.l,p2.r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> x)</span></span>&#123; <span class="comment">//在以u为根节点的树中，找第x小的数</span></span><br><span class="line">	<span class="keyword">int</span> tmp=u;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">int</span> val=t[t[tmp].l].siz+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(x==val) <span class="keyword">return</span> t[tmp].val;</span><br><span class="line">		<span class="keyword">if</span>(x&lt;val) tmp=t[tmp].l;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			x-=val;</span><br><span class="line">			tmp=t[tmp].r;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">sma</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;			<span class="comment">//查找第一个比x小的数</span></span><br><span class="line">	aft p=cut(root,rank(x));	<span class="comment">//将所有比x小的数切下</span></span><br><span class="line">	<span class="keyword">int</span> ans=find(p.l,t[p.l].siz);	<span class="comment">//查询切下的数中最大的</span></span><br><span class="line">	root=merge(p.l,p.r);          <span class="comment">//合并</span></span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lar</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123; 	     	<span class="comment">//查找第一个比x大的数</span></span><br><span class="line">	aft p=cut(root,rank(x+<span class="number">1</span>));	<span class="comment">//将所有比x小的数（包括）切下</span></span><br><span class="line">	<span class="keyword">int</span> ans=find(p.r,<span class="number">1</span>);		<span class="comment">//查询剩下的数中最小的</span></span><br><span class="line">	root=merge(p.l,p.r);</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	n=read();</span><br><span class="line">	rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">		<span class="keyword">int</span> opt,x;</span><br><span class="line">		opt=read(),x=read();</span><br><span class="line">		<span class="keyword">switch</span>(opt)&#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">1</span>: ins(x); <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">2</span>: del(x); <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">3</span>: <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,rank(x)+<span class="number">1</span>); <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">4</span>: <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,find(root,x)); <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">5</span>: <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sma(x)); <span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">6</span>: <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,lar(x)); <span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h3><p><a href="https://www.luogu.org/problemnew/show/P3369" target="_blank" rel="noopener">洛谷 P3369 【模板】普通平衡树（Treap/SBT）</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Treap/" rel="tag"><i class="fa fa-tag"></i> Treap</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/02/【模板】莫队算法/" rel="next" title="【学习笔记】莫队算法">
+                <i class="fa fa-chevron-left"></i> 【学习笔记】莫队算法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/02/【题解】[JSOI2004]平衡点 吊打XXX/" rel="prev" title="【题解】[JSOI2004]平衡点 / 吊打XXX">
+                【题解】[JSOI2004]平衡点 / 吊打XXX <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -349,6 +530,15 @@ tpwidget("show");</script>
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjMzMC8xMjg2NQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -369,8 +559,17 @@ tpwidget("show");</script>
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -524,6 +723,22 @@ tpwidget("show");</script>
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念与基本性质"><span class="nav-number">1.</span> <span class="nav-text">概念与基本性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本操作"><span class="nav-number">2.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现方法"><span class="nav-number">3.</span> <span class="nav-text">实现方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#具体操作"><span class="nav-number">3.1.</span> <span class="nav-text">具体操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目来源"><span class="nav-number">5.</span> <span class="nav-text">题目来源</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=388 src="//music.163.com/outchain/player?type=0&id=2439324576&auto=1&height=430"></iframe>
@@ -675,6 +890,10 @@ tpwidget("show");</script>
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -703,6 +922,17 @@ tpwidget("show");</script>
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

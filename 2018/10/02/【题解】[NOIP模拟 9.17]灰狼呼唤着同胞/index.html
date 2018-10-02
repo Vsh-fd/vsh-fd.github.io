@@ -88,7 +88,7 @@ tpwidget("show");</script>
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="DFS," />
 
 
 
@@ -101,16 +101,18 @@ tpwidget("show");</script>
 
 
 
-<meta name="description" content="We live in every moment but this one.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Vsh_fd&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/categories/杂谈/index.html">
+<meta name="description" content="诈尸了…这题比较 容易口胡 有意思，所以…  题目描述我的母亲柯蒂丽亚，是一个舞者。身披罗纱，一身异国装扮的她，来自灰狼的村子。 曾经在灰狼村子担任女侍的她，被认定在某晚犯下可怕的罪行之后，被赶出了村子。 一切的元凶，都要回到母亲犯下重罪的那一晚。">
+<meta name="keywords" content="DFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【题解】[NOIP模拟 9.17]灰狼呼唤着同胞">
+<meta property="og:url" content="http://yoursite.com/2018/10/02/【题解】[NOIP模拟 9.17]灰狼呼唤着同胞/index.html">
 <meta property="og:site_name" content="Vsh_fd&#39;s Blog">
-<meta property="og:description" content="We live in every moment but this one.">
+<meta property="og:description" content="诈尸了…这题比较 容易口胡 有意思，所以…  题目描述我的母亲柯蒂丽亚，是一个舞者。身披罗纱，一身异国装扮的她，来自灰狼的村子。 曾经在灰狼村子担任女侍的她，被认定在某晚犯下可怕的罪行之后，被赶出了村子。 一切的元凶，都要回到母亲犯下重罪的那一晚。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-30T02:06:28.217Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vsh_fd&#39;s Blog">
-<meta name="twitter:description" content="We live in every moment but this one.">
+<meta name="twitter:title" content="【题解】[NOIP模拟 9.17]灰狼呼唤着同胞">
+<meta name="twitter:description" content="诈尸了…这题比较 容易口胡 有意思，所以…  题目描述我的母亲柯蒂丽亚，是一个舞者。身披罗纱，一身异国装扮的她，来自灰狼的村子。 曾经在灰狼村子担任女侍的她，被认定在某晚犯下可怕的罪行之后，被赶出了村子。 一切的元凶，都要回到母亲犯下重罪的那一晚。">
 
 
 
@@ -140,13 +142,13 @@ tpwidget("show");</script>
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/杂谈/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/02/【题解】[NOIP模拟 9.17]灰狼呼唤着同胞/"/>
 
 
 
 
 
-  <title>分类: 杂谈 | Vsh_fd's Blog</title>
+  <title>【题解】[NOIP模拟 9.17]灰狼呼唤着同胞 | Vsh_fd's Blog</title>
   
 
 
@@ -165,7 +167,7 @@ tpwidget("show");</script>
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 <a href="https://github.com/Vsh-fd" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -293,55 +295,251 @@ tpwidget("show");</script>
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>杂谈<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/02/【题解】[NOIP模拟 9.17]灰狼呼唤着同胞/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vsh_fd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/qwq.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vsh_fd's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/10/02/【杂谈】初中毕业祭/" itemprop="url">
-              
-                <span itemprop="name">【杂谈】初中毕业祭</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">【题解】[NOIP模拟 9.17]灰狼呼唤着同胞</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-02T18:15:16+08:00"
-              content="2018-10-02" >
-          10-02
-        </time>
-      </div>
+        <div class="post-meta">
+                  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-02T18:15:16+08:00">
+                2018-10-02
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/题解/" itemprop="url" rel="index">
+                    <span itemprop="name">题解</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 误人子弟
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,334
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>诈尸了…这题比较 <del>容易口胡</del> 有意思，所以…</p>
+<hr>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>我的母亲柯蒂丽亚，是一个舞者。身披罗纱，一身异国装扮的她，来自灰狼的村子。</p>
+<p>曾经在灰狼村子担任女侍的她，被认定在某晚犯下可怕的罪行之后，被赶出了村子。</p>
+<p>一切的元凶，都要回到母亲犯下重罪的那一晚。</p>
+<a id="more"></a>
+<p>我不认为柯蒂丽亚有犯罪。</p>
+<p>二十年前的混沌，一共有n块碎片。</p>
+<p>这n块碎片曾经<strong>两两之间都有联系</strong>，可是很多联系都在时间的洪流中消失了。</p>
+<p>现在，我只能确定其中 m 条联系的种类。</p>
+<p>每条联系都是一条<strong>无向边</strong>，<strong>任意两块碎片之间至多有一条联系，没有联系会连接在同一块碎片的两端。</strong></p>
+<p>联系有两种。一种是冲突，用0表示；另一种是吻合，用1表示。</p>
+<p>虽然已经过去了二十年，但是联系的种类是不会变的。</p>
+<p>现在，我想要用这 m 条联系，去推断二十年前的 n(n-1)/2 条联系的种类。</p>
+<p>如果我推理出所有联系的种类，那么我就可以将混沌言语化，证明柯蒂丽亚的清白。</p>
+<p>在灰狼的村子，我得知了推理的唯一条件：</p>
+<p><strong>二十年前，对于任意三块互不相同的碎片，要么这三块碎片两两吻合，要么恰好有一对碎片互相吻合。</strong></p>
+<p>我想要知道，二十年前n块碎片两两之间的联系，可能有多少种。</p>
+<p>你只要输出方案数模 998244353 之后的结果。如果已经确定的m条联系不符合上述条件，请输出 0。</p>
+<p>两种方案不同，当且仅当存在两块碎片，在一种方案中冲突，在另一种方案中吻合。也就是说，你要求的是有多少种可能的原图。</p>
+<hr>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><p>第一行两个整数 Test,T，Test 表示测试点的编号，T 表示数据的组数。保证 T≤3。</p>
+<p>接下来 T 组数据，每组数据第一行两个整数 n,m，</p>
+<p>接下来 m 行，每行三个整数 u,v,t，表示第 u 块碎片和第 v 块碎片之间联系的种类为 t。</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>共T行，每行一个整数，表示方案数对 998244353 取模后的结果。</p>
+<hr>
+<h3 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h3><pre><code>0 2
+3 0
+4 2
+1 2 1
+1 3 0
+</code></pre><h3 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h3><pre><code>4
+2
+</code></pre><hr>
+<h3 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a>样例解释</h3><p>第一组数据中，三块碎片两两吻合的方案有 1 种，三块碎片中恰好有一对碎片互相吻合的<br>方案有 3 种，总共有 4 种方案。</p>
+<p>第二组数据中，因为第 1、2 块碎片吻合，第 1、3 块碎片冲突，所以第 2、3 块碎片一定<br>冲突。</p>
+<hr>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>先按题意建边并分类标号，若不合法，则标记退出。统计连通块个数。<br><strong>将点染色。</strong><br>只要确定任意连通块内的任意一点，那个连通块内所有点都将被确定（敌人的敌人就是朋友）。<br>即所有点都将被染成黑白两色。<br>这个连通块与另一个连通块间的连边种类（冲突 or 吻合），将确定另一个连通块的所有点的颜色。<br>以此类推，<br>最后两个连通块间的边将由点的颜色确定，即<strong>连边方案数为 2 ^ (连通块个数 - 1)</strong>。<br>得出答案。</p>
+<hr>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,a,b) for(re i=a;i&lt;=b;++i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> drep(i,a,b) for(re i=a;i&gt;=b;--i)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll x=<span class="number">0</span>;<span class="keyword">bool</span> f=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch)) f^=!(ch^<span class="string">'-'</span>),ch=getchar();</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch)) x=((x+(x&lt;&lt;<span class="number">2</span>))&lt;&lt;<span class="number">1</span>)+(ch^<span class="number">48</span>),ch=getchar();</span><br><span class="line">    <span class="keyword">return</span> f?-x:x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Online_Judge</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">        freopen(<span class="string">"brethren.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">        freopen(<span class="string">"brethren.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">&#125;</span><br><span class="line">ll Test,T;</span><br><span class="line">ll head[<span class="number">100050</span>],to[<span class="number">2000050</span>],nxt[<span class="number">2000050</span>],cnt,ans;</span><br><span class="line"><span class="keyword">bool</span> f[<span class="number">2000050</span>],vis[<span class="number">100050</span>],color[<span class="number">100050</span>],rflag;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">addedge</span><span class="params">(ll u,ll v,<span class="keyword">bool</span> flag)</span></span>&#123;</span><br><span class="line">    to[++cnt]=v;</span><br><span class="line">    nxt[cnt]=head[u];</span><br><span class="line">    head[u]=cnt;</span><br><span class="line">    f[cnt]=flag;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">    vis[x]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i=head[x];i;i=nxt[i])&#123;</span><br><span class="line">        ll too=to[i];</span><br><span class="line">        <span class="keyword">if</span>(vis[too]==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(f[i]==<span class="number">0</span> <span class="keyword">and</span> color[x]==color[too]) rflag=<span class="number">1</span>;<span class="comment">//判合法操作</span></span><br><span class="line">            <span class="keyword">if</span>(f[i]==<span class="number">1</span> <span class="keyword">and</span> color[x]!=color[too]) rflag=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(f[i]==<span class="number">0</span>) color[x]==<span class="number">1</span>?color[too]=<span class="number">0</span>:color[too]=<span class="number">1</span>;<span class="comment">//染色操作</span></span><br><span class="line">            <span class="keyword">if</span>(f[i]==<span class="number">1</span>) color[x]==<span class="number">1</span>?color[too]=<span class="number">1</span>:color[too]=<span class="number">0</span>;</span><br><span class="line">            dfs(too);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//    Online_Judge();</span></span><br><span class="line">    Test=read(),T=read();</span><br><span class="line">    <span class="keyword">while</span>(T--)&#123;</span><br><span class="line">        <span class="built_in">memset</span>(head,<span class="number">0</span>,<span class="keyword">sizeof</span> head);</span><br><span class="line">        <span class="built_in">memset</span>(to,<span class="number">0</span>,<span class="keyword">sizeof</span> to);</span><br><span class="line">        <span class="built_in">memset</span>(nxt,<span class="number">0</span>,<span class="keyword">sizeof</span> nxt);</span><br><span class="line">        <span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="keyword">sizeof</span> f);</span><br><span class="line">        <span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span> vis);</span><br><span class="line">        <span class="built_in">memset</span>(color,<span class="number">0</span>,<span class="keyword">sizeof</span> color);<span class="comment">//咳咳</span></span><br><span class="line">        cnt=<span class="number">0</span>,ans=<span class="number">0</span>,rflag=<span class="number">0</span>;</span><br><span class="line">        ll n=read(),m=read();</span><br><span class="line">        rep(i,<span class="number">1</span>,m)&#123;</span><br><span class="line">            ll u=read(),v=read();</span><br><span class="line">            <span class="keyword">bool</span> t;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">            addedge(u,v,t);</span><br><span class="line">            addedge(v,u,t);</span><br><span class="line">        &#125;</span><br><span class="line">        rep(i,<span class="number">1</span>,n)&#123;</span><br><span class="line">            <span class="keyword">if</span>(vis[i]==<span class="number">1</span>) <span class="keyword">continue</span>;</span><br><span class="line">            ans++;</span><br><span class="line">            dfs(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(rflag==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">"0"</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ll anss=<span class="number">1</span>;</span><br><span class="line">        rep(i,<span class="number">1</span>,ans<span class="number">-1</span>)&#123;</span><br><span class="line">            anss&lt;&lt;=<span class="number">1</span>;</span><br><span class="line">            anss%=<span class="number">998244353</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,anss);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h3><p><a href="http://cxslzx.hustoj.com/problem.php?id=1501" target="_blank" rel="noopener">cxslzxOJ 1501 灰狼呼唤着同胞（常州2017提高day6第2题）</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DFS/" rel="tag"><i class="fa fa-tag"></i> DFS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/02/【题解】[JSOI2004]平衡点 吊打XXX/" rel="next" title="【题解】[JSOI2004]平衡点 / 吊打XXX">
+                <i class="fa fa-chevron-left"></i> 【题解】[JSOI2004]平衡点 / 吊打XXX
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/02/【题解】[NOIP模拟 9.29]matrix/" rel="prev" title="【题解】[NOIP模拟 9.29]matrix">
+                【题解】[NOIP模拟 9.29]matrix <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -349,6 +547,15 @@ tpwidget("show");</script>
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjMzMC8xMjg2NQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -369,8 +576,17 @@ tpwidget("show");</script>
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -524,6 +740,22 @@ tpwidget("show");</script>
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">2.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">3.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输入："><span class="nav-number">4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例输出："><span class="nav-number">5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例解释"><span class="nav-number">6.</span> <span class="nav-text">样例解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题思路"><span class="nav-number">7.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">8.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目来源"><span class="nav-number">9.</span> <span class="nav-text">题目来源</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=388 src="//music.163.com/outchain/player?type=0&id=2439324576&auto=1&height=430"></iframe>
@@ -675,6 +907,10 @@ tpwidget("show");</script>
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -703,6 +939,17 @@ tpwidget("show");</script>
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
