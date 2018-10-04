@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-10-03T03:50:31.085Z</updated>
+  <updated>2018-10-04T05:55:33.924Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【学习笔记】最大子矩形问题</title>
+    <link href="http://yoursite.com/2018/10/04/%E3%80%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E6%9C%80%E5%A4%A7%E5%AD%90%E7%9F%A9%E9%98%B5%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2018/10/04/【学习笔记】最大子矩阵问题/</id>
+    <published>2018-10-03T17:51:41.420Z</published>
+    <updated>2018-10-04T05:55:33.924Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="问题类型"><a href="#问题类型" class="headerlink" title="问题类型"></a>问题类型</h2><p>给定一个含有障碍点的矩形，找出内部不含障碍点的、边与整个矩形平行或重合的最大子矩形。</p><hr><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote><p><strong>有效子矩形</strong>：内部不含障碍点的、边与整个矩形平行或重合的最大子矩形。<br><strong>极大子矩形</strong>：各边都与障碍点或整个矩形的边重合的有效子矩形。<br><strong>最大子矩形</strong>：最大的有效子矩形。</p></blockquote><p>最大子矩形 $\subseteq$ 极大子矩形 $\subseteq$ 有效子矩形</p><a id="more"></a><hr><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>采用 <strong>极大化思想</strong></p><p>枚举所有极大子矩形，找到最大子矩形。</p><p>设矩形为 $n\times m$，障碍点数为 $s$。</p><h3 id="算法一"><a href="#算法一" class="headerlink" title="算法一"></a>算法一</h3><blockquote><p>时间复杂度 O( $s^2$ )，空间复杂度 O( $s$ )</p></blockquote><h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>首先考虑直接暴力枚举四个边界，然后判断是否为<strong>有效子矩形</strong>。</p><p>时间复杂度 O( $s^5$ )，产生大量的无效子矩形，妥妥的 TLE。</p><p>让我们对以上算法进行优化：</p><blockquote><p>将所有障碍点按横坐标排序并编号为 $1,2,3,…$<br>从左往右枚举极大子矩形左边界，以整个矩形上下边为边界。<br>向右扫描，枚举障碍点，修改上下边界使矩阵有效，复杂度 O( $s^2$ )。</p></blockquote><p>枚举左右边界时不要忘了加上整个矩形的左右边界！</p><h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>复杂度比较优秀，适用于障碍点较少的稀疏图</p><h4 id="示题"><a href="#示题" class="headerlink" title="示题"></a>示题</h4><p><a href="https://vijos.org/p/1055" target="_blank" rel="noopener">WC2002 奶牛浴场</a></p><h3 id="算法二（悬线法）"><a href="#算法二（悬线法）" class="headerlink" title="算法二（悬线法）"></a>算法二（悬线法）</h3><blockquote><p>时间复杂度 O( $n\times m$ )，空间复杂度 O( $n\times m$ )</p></blockquote><p>重点来了！ \拍桌 \拍桌</p><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><blockquote><p><strong>有效竖线</strong>：除了两个端点外，不覆盖任何一个障碍点的竖直线段。<br><strong>悬线</strong>：上端覆盖了一个障碍点或者到达整个矩形上边界的有效竖线。</p></blockquote><p>我们称以点 $(i,j)$ 为底的悬线为点 $(i,j)$ 对应的悬线</p><h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><p>一个矩形中共有 $(n-1)\times m$ 条悬线，即除了顶部的点外，其余的各点均有且只有一条与其对应的悬线。</p><p>枚举各条悬线，将其向左右两侧尽可能拓展，就可得到一个由 $(n-1)\times m$ 个悬线拓展形成的矩形的集合，而这个集合包含了所有的极大子矩形。</p><p>枚举悬线的时间复杂度是 O( $n\times m$ ) 的，即我们要在 O( $1$ ) 内拓展左右区间。</p><p>设 height$[ i,j ]$ 为点 $(i,j)$ 对应的悬线的长度，left$[i,j]$ 为点 $(i,j)$ 对应的悬线向左最多拓展到的位置，right$[i,j]$ 为点 $(i,j)$ 对应的悬线向右最多拓展到的位置。</p><blockquote><p>left$[i,j]$ 和 right$[i,j]$先初始化为点 $(i,j)$ 向左右最多拓展到的位置。</p></blockquote><p>这样，若 $(i-1,j)$ 为障碍点，height$[i,j]$=1，left$[i,j]$=0，right$[i,j]$=$m$</p><p>若 $(i-1,j)$ 不为障碍点：</p><blockquote><p>height$[i,j]$=height$[i-1,j]+1$<br>left$[i,j]$=$max$ ( left$[i-1,j]$ , left$[i,j]$ )<br>right$[i,j]$=$min$ ( right$[i-1,j]$ , right$[i,j]$ )</p></blockquote><p>这样就可以利用递推式，在 O( $1$ ) 的复杂度内拓展左右区间。</p><h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>复杂度与障碍点数无关，适合障碍点较稠密的矩阵求解，在障碍点较少时，不如算法一。</p><h4 id="示题-1"><a href="#示题-1" class="headerlink" title="示题"></a>示题</h4><p><a href="https://www.luogu.org/problemnew/show/P1169" target="_blank" rel="noopener">[ZJOI 2007]棋盘制作</a></p><p>题解将发至下一篇博客</p><hr><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://blog.csdn.net/Clove_unique/article/details/50512624" target="_blank" rel="noopener">最大子矩阵问题&amp;悬线法 学习笔记</a> Clove_unique</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;问题类型&quot;&gt;&lt;a href=&quot;#问题类型&quot; class=&quot;headerlink&quot; title=&quot;问题类型&quot;&gt;&lt;/a&gt;问题类型&lt;/h2&gt;&lt;p&gt;给定一个含有障碍点的矩形，找出内部不含障碍点的、边与整个矩形平行或重合的最大子矩形。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;有效子矩形&lt;/strong&gt;：内部不含障碍点的、边与整个矩形平行或重合的最大子矩形。&lt;br&gt;&lt;strong&gt;极大子矩形&lt;/strong&gt;：各边都与障碍点或整个矩形的边重合的有效子矩形。&lt;br&gt;&lt;strong&gt;最大子矩形&lt;/strong&gt;：最大的有效子矩形。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最大子矩形 $\subseteq$ 极大子矩形 $\subseteq$ 有效子矩形&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="悬线法" scheme="http://yoursite.com/tags/%E6%82%AC%E7%BA%BF%E6%B3%95/"/>
+    
+      <category term="最大子矩形" scheme="http://yoursite.com/tags/%E6%9C%80%E5%A4%A7%E5%AD%90%E7%9F%A9%E5%BD%A2/"/>
+    
+      <category term="动态规划,DP" scheme="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP/"/>
+    
+  </entry>
   
   <entry>
     <title>【学习笔记】卡特兰数</title>

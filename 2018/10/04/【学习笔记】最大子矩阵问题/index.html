@@ -88,7 +88,7 @@ tpwidget("show");</script>
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="悬线法,最大子矩形,动态规划,DP," />
 
 
 
@@ -101,16 +101,18 @@ tpwidget("show");</script>
 
 
 
-<meta name="description" content="We live in every moment but this one.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Vsh_fd&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta name="description" content="问题类型给定一个含有障碍点的矩形，找出内部不含障碍点的、边与整个矩形平行或重合的最大子矩形。  定义 有效子矩形：内部不含障碍点的、边与整个矩形平行或重合的最大子矩形。极大子矩形：各边都与障碍点或整个矩形的边重合的有效子矩形。最大子矩形：最大的有效子矩形。  最大子矩形 $\subseteq$ 极大子矩形 $\subseteq$ 有效子矩形">
+<meta name="keywords" content="悬线法,最大子矩形,动态规划,DP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【学习笔记】最大子矩形问题">
+<meta property="og:url" content="http://yoursite.com/2018/10/04/【学习笔记】最大子矩阵问题/index.html">
 <meta property="og:site_name" content="Vsh_fd&#39;s Blog">
-<meta property="og:description" content="We live in every moment but this one.">
+<meta property="og:description" content="问题类型给定一个含有障碍点的矩形，找出内部不含障碍点的、边与整个矩形平行或重合的最大子矩形。  定义 有效子矩形：内部不含障碍点的、边与整个矩形平行或重合的最大子矩形。极大子矩形：各边都与障碍点或整个矩形的边重合的有效子矩形。最大子矩形：最大的有效子矩形。  最大子矩形 $\subseteq$ 极大子矩形 $\subseteq$ 有效子矩形">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-04T05:55:33.924Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vsh_fd&#39;s Blog">
-<meta name="twitter:description" content="We live in every moment but this one.">
+<meta name="twitter:title" content="【学习笔记】最大子矩形问题">
+<meta name="twitter:description" content="问题类型给定一个含有障碍点的矩形，找出内部不含障碍点的、边与整个矩形平行或重合的最大子矩形。  定义 有效子矩形：内部不含障碍点的、边与整个矩形平行或重合的最大子矩形。极大子矩形：各边都与障碍点或整个矩形的边重合的有效子矩形。最大子矩形：最大的有效子矩形。  最大子矩形 $\subseteq$ 极大子矩形 $\subseteq$ 有效子矩形">
 
 
 
@@ -140,13 +142,13 @@ tpwidget("show");</script>
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/04/【学习笔记】最大子矩阵问题/"/>
 
 
 
 
 
-  <title>归档 | Vsh_fd's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>【学习笔记】最大子矩形问题 | Vsh_fd's Blog</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -165,7 +167,7 @@ tpwidget("show");</script>
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-archive">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 <a href="https://github.com/Vsh-fd" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -293,411 +295,258 @@ tpwidget("show");</script>
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/04/【学习笔记】最大子矩阵问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vsh_fd">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/qwq.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vsh_fd's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">【学习笔记】最大子矩形问题</h1>
         
+
+        <div class="post-meta">
+                  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-04T01:51:41+08:00">
+                2018-10-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        exm?! 才写了 14 篇文章.. 我好菜啊..
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/04/【学习笔记】最大子矩阵问题/" itemprop="url">
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 误人子弟
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
               
-                <span itemprop="name">【学习笔记】最大子矩形问题</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  857
+                </span>
               
-            </a>
-        
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-04T01:51:41+08:00"
-              content="2018-10-04" >
-          10-04
-        </time>
-      </div>
+              
+                <span class="post-meta-divider">|</span>
+              
 
-    </header>
-  </article>
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
 
+          
 
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/01/【学习笔记】卡特兰数/" itemprop="url">
-              
-                <span itemprop="name">【学习笔记】卡特兰数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-01T19:31:09+08:00"
-              content="2018-10-01" >
-          10-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/29/【题解】[NOIP模拟 9.29]matrix/" itemprop="url">
-              
-                <span itemprop="name">【题解】[NOIP模拟 9.29]matrix</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-29T19:22:54+08:00"
-              content="2018-09-29" >
-          09-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="问题类型"><a href="#问题类型" class="headerlink" title="问题类型"></a>问题类型</h2><p>给定一个含有障碍点的矩形，找出内部不含障碍点的、边与整个矩形平行或重合的最大子矩形。</p>
+<hr>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><blockquote>
+<p><strong>有效子矩形</strong>：内部不含障碍点的、边与整个矩形平行或重合的最大子矩形。<br><strong>极大子矩形</strong>：各边都与障碍点或整个矩形的边重合的有效子矩形。<br><strong>最大子矩形</strong>：最大的有效子矩形。</p>
+</blockquote>
+<p>最大子矩形 $\subseteq$ 极大子矩形 $\subseteq$ 有效子矩形</p>
+<a id="more"></a>
+<hr>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>采用 <strong>极大化思想</strong></p>
+<p>枚举所有极大子矩形，找到最大子矩形。</p>
+<p>设矩形为 $n\times m$，障碍点数为 $s$。</p>
+<h3 id="算法一"><a href="#算法一" class="headerlink" title="算法一"></a>算法一</h3><blockquote>
+<p>时间复杂度 O( $s^2$ )，空间复杂度 O( $s$ )</p>
+</blockquote>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>首先考虑直接暴力枚举四个边界，然后判断是否为<strong>有效子矩形</strong>。</p>
+<p>时间复杂度 O( $s^5$ )，产生大量的无效子矩形，妥妥的 TLE。</p>
+<p>让我们对以上算法进行优化：</p>
+<blockquote>
+<p>将所有障碍点按横坐标排序并编号为 $1,2,3,…$<br>从左往右枚举极大子矩形左边界，以整个矩形上下边为边界。<br>向右扫描，枚举障碍点，修改上下边界使矩阵有效，复杂度 O( $s^2$ )。</p>
+</blockquote>
+<p>枚举左右边界时不要忘了加上整个矩形的左右边界！</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>复杂度比较优秀，适用于障碍点较少的稀疏图</p>
+<h4 id="示题"><a href="#示题" class="headerlink" title="示题"></a>示题</h4><p><a href="https://vijos.org/p/1055" target="_blank" rel="noopener">WC2002 奶牛浴场</a></p>
+<h3 id="算法二（悬线法）"><a href="#算法二（悬线法）" class="headerlink" title="算法二（悬线法）"></a>算法二（悬线法）</h3><blockquote>
+<p>时间复杂度 O( $n\times m$ )，空间复杂度 O( $n\times m$ )</p>
+</blockquote>
+<p>重点来了！ \拍桌 \拍桌</p>
+<h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><blockquote>
+<p><strong>有效竖线</strong>：除了两个端点外，不覆盖任何一个障碍点的竖直线段。<br><strong>悬线</strong>：上端覆盖了一个障碍点或者到达整个矩形上边界的有效竖线。</p>
+</blockquote>
+<p>我们称以点 $(i,j)$ 为底的悬线为点 $(i,j)$ 对应的悬线</p>
+<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><p>一个矩形中共有 $(n-1)\times m$ 条悬线，即除了顶部的点外，其余的各点均有且只有一条与其对应的悬线。</p>
+<p>枚举各条悬线，将其向左右两侧尽可能拓展，就可得到一个由 $(n-1)\times m$ 个悬线拓展形成的矩形的集合，而这个集合包含了所有的极大子矩形。</p>
+<p>枚举悬线的时间复杂度是 O( $n\times m$ ) 的，即我们要在 O( $1$ ) 内拓展左右区间。</p>
+<p>设 height$[ i,j ]$ 为点 $(i,j)$ 对应的悬线的长度，left$[i,j]$ 为点 $(i,j)$ 对应的悬线向左最多拓展到的位置，right$[i,j]$ 为点 $(i,j)$ 对应的悬线向右最多拓展到的位置。</p>
+<blockquote>
+<p>left$[i,j]$ 和 right$[i,j]$先初始化为点 $(i,j)$ 向左右最多拓展到的位置。</p>
+</blockquote>
+<p>这样，若 $(i-1,j)$ 为障碍点，height$[i,j]$=1，left$[i,j]$=0，right$[i,j]$=$m$</p>
+<p>若 $(i-1,j)$ 不为障碍点：</p>
+<blockquote>
+<p>height$[i,j]$=height$[i-1,j]+1$<br>left$[i,j]$=$max$ ( left$[i-1,j]$ , left$[i,j]$ )<br>right$[i,j]$=$min$ ( right$[i-1,j]$ , right$[i,j]$ )</p>
+</blockquote>
+<p>这样就可以利用递推式，在 O( $1$ ) 的复杂度内拓展左右区间。</p>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>复杂度与障碍点数无关，适合障碍点较稠密的矩阵求解，在障碍点较少时，不如算法一。</p>
+<h4 id="示题-1"><a href="#示题-1" class="headerlink" title="示题"></a>示题</h4><p><a href="https://www.luogu.org/problemnew/show/P1169" target="_blank" rel="noopener">[ZJOI 2007]棋盘制作</a></p>
+<p>题解将发至下一篇博客</p>
+<hr>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://blog.csdn.net/Clove_unique/article/details/50512624" target="_blank" rel="noopener">最大子矩阵问题&amp;悬线法 学习笔记</a> Clove_unique</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/25/【题解】[ZqlwMatt 原创题]青蛙 (zby)/" itemprop="url">
-              
-                <span itemprop="name">【题解】[ZqlwMatt 原创题]青蛙 (zby)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-25T20:26:27+08:00"
-              content="2018-09-25" >
-          09-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/20/【题解】[NOIP模拟 9.17]灰狼呼唤着同胞/" itemprop="url">
-              
-                <span itemprop="name">【题解】[NOIP模拟 9.17]灰狼呼唤着同胞</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-20T19:16:15+08:00"
-              content="2018-09-20" >
-          09-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/19/【杂谈】初中毕业祭/" itemprop="url">
-              
-                <span itemprop="name">【杂谈】初中毕业祭</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-19T17:16:27+08:00"
-              content="2018-06-19" >
-          06-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/27/【题解】[SCOI2011]糖果/" itemprop="url">
-              
-                <span itemprop="name">【题解】[SCOI2011]糖果</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-27T21:03:45+08:00"
-              content="2018-05-27" >
-          05-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/24/【题解】[JSOI2004]平衡点 吊打XXX/" itemprop="url">
-              
-                <span itemprop="name">【题解】[JSOI2004]平衡点 / 吊打XXX</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-24T19:51:36+08:00"
-              content="2018-05-24" >
-          05-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/22/【题解】[洛谷 P4514]上帝造题的七分钟/" itemprop="url">
-              
-                <span itemprop="name">【题解】[洛谷 P4514]上帝造题的七分钟</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-22T12:13:07+08:00"
-              content="2018-05-22" >
-          05-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/21/【模板】树状数组/" itemprop="url">
-              
-                <span itemprop="name">【学习笔记】树状数组</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-21T07:45:20+08:00"
-              content="2018-05-21" >
-          05-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/悬线法/" rel="tag"><i class="fa fa-tag"></i> 悬线法</a>
+          
+            <a href="/tags/最大子矩形/" rel="tag"><i class="fa fa-tag"></i> 最大子矩形</a>
+          
+            <a href="/tags/动态规划-DP/" rel="tag"><i class="fa fa-tag"></i> 动态规划,DP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/01/【学习笔记】卡特兰数/" rel="next" title="【学习笔记】卡特兰数">
+                <i class="fa fa-chevron-left"></i> 【学习笔记】卡特兰数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -705,6 +554,15 @@ tpwidget("show");</script>
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjMzMC8xMjg2NQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -725,8 +583,17 @@ tpwidget("show");</script>
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -880,6 +747,22 @@ tpwidget("show");</script>
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题类型"><span class="nav-number">1.</span> <span class="nav-text">问题类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法一"><span class="nav-number">3.1.</span> <span class="nav-text">算法一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#思路"><span class="nav-number">3.1.1.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-number">3.1.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示题"><span class="nav-number">3.1.3.</span> <span class="nav-text">示题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法二（悬线法）"><span class="nav-number">3.2.</span> <span class="nav-text">算法二（悬线法）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思路-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点-1"><span class="nav-number">3.2.3.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示题-1"><span class="nav-number">3.2.4.</span> <span class="nav-text">示题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=355 src="//music.163.com/outchain/player?type=0&id=2439324576&auto=1&height=430"></iframe>
@@ -1031,6 +914,10 @@ tpwidget("show");</script>
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1059,6 +946,17 @@ tpwidget("show");</script>
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
