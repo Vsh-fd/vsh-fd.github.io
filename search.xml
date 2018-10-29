@@ -6,7 +6,7 @@
       <title>【杂谈】日语五十音随机测试器</title>
       <link href="/2018/10/29/%E3%80%90%E6%9D%82%E8%B0%88%E3%80%91%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3%E9%9A%8F%E6%9C%BA%E6%B5%8B%E8%AF%95%E5%99%A8/"/>
       <url>/2018/10/29/%E3%80%90%E6%9D%82%E8%B0%88%E3%80%91%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3%E9%9A%8F%E6%9C%BA%E6%B5%8B%E8%AF%95%E5%99%A8/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>最近在学日语，五十音总是记不住，就写了这个程序帮助记忆</p><p>灵感来自机房某大佬..但他的程序好奇怪啊分数为什么能扣到负啊还不肯改怎么回事啊</p><p>也不公开代码，我只能自己写一个自娱自乐了…</p><p><img src="https://s1.ax1x.com/2018/10/29/igRaQ0.png" alt="igRaQ0.png"></p><a id="more"></a><p>会根据我的学习进度更新程序，加入新功能，敬请期待哦</p><h2 id="最近更新："><a href="#最近更新：" class="headerlink" title="最近更新："></a>最近更新：</h2><ul><li><p><a href="/download/0.0.2.exe">0.0.2</a>  2018.10.29</p><p>  开局就凉…修复了上个版本restart后的初始化问题，新增查看五十音图与退出功能。</p></li><li><p><a href="/download/0.0.1.exe">0.0.1</a>  2018.10.29</p><p>  仅支持清音部分，根据假名输入罗马音，现在的版本不适用看罗马音写不出假名的同学 <del>又不能在电脑上手写假名</del>，正在想办法解决…</p></li></ul>]]></content>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>最近在学日语，五十音总是记不住，就写了这个程序帮助记忆</p><p>灵感来自机房某大佬..但他的程序好奇怪啊分数为什么能扣到负啊还不肯改怎么回事啊</p><p>也不公开代码，我只能自己写一个自娱自乐了…</p><p><img src="https://s1.ax1x.com/2018/10/29/igRaQ0.png" alt="igRaQ0.png"></p><a id="more"></a><p>会根据我的学习进度更新程序，加入新功能，敬请期待哦</p><h2 id="最近更新："><a href="#最近更新：" class="headerlink" title="最近更新："></a>最近更新：</h2><p>点击版本号下载</p><ul><li><p><a href="/download/0.0.2.exe">0.0.2</a>  2018.10.29</p><p>  开局就凉…修复了上个版本restart后的初始化问题，新增查看五十音图与退出功能。</p></li><li><p>0.0.1  2018.10.29</p><p>  仅支持清音部分，根据假名输入罗马音，现在的版本不适用看罗马音写不出假名的同学 <del>又不能在电脑上手写假名</del>，正在想办法解决…</p></li></ul>]]></content>
       
       <categories>
           
