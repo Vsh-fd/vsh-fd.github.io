@@ -109,12 +109,12 @@ tpwidget("show");</script>
 <meta property="og:site_name" content="Blog | Vishford">
 <meta property="og:description" content="概念与基本性质 Treap = Tree + Heap，即是一棵同时满足二叉搜索树和堆性质的二叉树Treap 有一个随机附加域满足堆的性质，其结构相当于以随机数据插入的二叉搜索树其基本操作的期望时间复杂度为 O(log n)  相对于其他的平衡二叉搜索树，Treap的特点是实现简单，且能基本实现随机平衡的结构。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://s1.ax1x.com/2018/05/09/CwPhzn.png">
-<meta property="og:updated_time" content="2018-10-29T05:07:31.023Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006sjNcEly1fwp4yoangrj30ej09pq3d.jpg">
+<meta property="og:updated_time" content="2018-10-29T07:44:56.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【学习笔记】非旋Treap">
 <meta name="twitter:description" content="概念与基本性质 Treap = Tree + Heap，即是一棵同时满足二叉搜索树和堆性质的二叉树Treap 有一个随机附加域满足堆的性质，其结构相当于以随机数据插入的二叉搜索树其基本操作的期望时间复杂度为 O(log n)  相对于其他的平衡二叉搜索树，Treap的特点是实现简单，且能基本实现随机平衡的结构。">
-<meta name="twitter:image" content="https://s1.ax1x.com/2018/05/09/CwPhzn.png">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006sjNcEly1fwp4yoangrj30ej09pq3d.jpg">
 
 
 
@@ -452,7 +452,8 @@ tpwidget("show");</script>
 </blockquote>
 <hr>
 <h3 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h3><p>本题目的是构造名次树来维护一个有序序列<br>为了在保证堆的性质的同时进行如上操作，我们引入下列函数：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">cut</span><span class="params">(u, k)</span></span>      <span class="comment">//将以 u 为根节点的子树在第 k 个节点后切开，并返回切开后两树根节点。</span></span><br><span class="line"><span class="function"><span class="title">merge</span><span class="params">(l, r)</span></span>    <span class="comment">//在维护堆性质的同时将的两棵 Treap 合并为一棵，并返回合并后的根节点。</span></span><br></pre></td></tr></table></figure></p>
-<p>每次cut的位置大概如下：<br><img src="https://s1.ax1x.com/2018/05/09/CwPhzn.png" alt="CwPhzn.png"></p>
+<p>每次cut的位置大概如下：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006sjNcEly1fwp4yoangrj30ej09pq3d.jpg" alt=""></p>
 <h4 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h4><blockquote>
 <p>插入 - insert = cut + merge + merge<br>删除 - delete = split + split + merge ? O(log n)<br>排名查询/数值查询 - search ：通过二叉排序树的性质进行查找<br>前驱 - last：将所有比 x 小的数切下，找到其中最大的数后，再合并<br>后继 - next：将所有比 x 小的数（包括）切下，在剩下的树中找出最小的数后，再合并</p>
 </blockquote>
