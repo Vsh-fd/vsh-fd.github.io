@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-10T01:37:39.618Z</updated>
+  <updated>2021-01-10T01:51:29.186Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,16 +21,15 @@
     <link href="http://yoursite.com/2021/01/10/%E6%96%B0%E5%BB%BA%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3/"/>
     <id>http://yoursite.com/2021/01/10/新建文本文档/</id>
     <published>2021-01-10T01:37:34.464Z</published>
-    <updated>2021-01-10T01:37:39.618Z</updated>
+    <updated>2021-01-10T01:51:29.186Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>23423423</p>]]></content>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><script type="math/tex; mode=display">lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|<\epsilon)=1, i=1,...,n</script>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;23423423&lt;/p&gt;
-
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script type=&quot;math/tex; mode=display&quot;&gt;lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&lt;\eps
       
     
     </summary>
