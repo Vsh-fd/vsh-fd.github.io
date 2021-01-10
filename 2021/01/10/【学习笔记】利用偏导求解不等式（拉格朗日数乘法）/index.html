@@ -88,7 +88,7 @@ tpwidget("show");</script>
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="偏导,数学,不等式," />
 
 
 
@@ -101,16 +101,18 @@ tpwidget("show");</script>
 
 
 
-<meta name="description" content="把直到昨天为止的我逐渐杀死。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog | Vishford">
-<meta property="og:url" content="http://yoursite.com/tags/悬线法/index.html">
+<meta name="description" content="偏导概念的引入 在数学中，一个多变量的函数的偏导数，就是它关于其中一个变量的导数而保持其他变量恒定（相对于全导数，在其中所有变量都允许变化）。在一元函数中，导数就是函数的变化率。对于二元函数的“变化率”，由于自变量多了一个，情况就要复杂的多。在 $xOy$ 平面内，当动点由 $P(x0,y0)$ 沿不同方向变化时，函数 $f(x,y)$ 的变化快慢一般来说是不同的，因此就需要研究 $f(x,y)$">
+<meta name="keywords" content="偏导,数学,不等式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【学习笔记】利用偏导求解不等式（拉格朗日数乘法）">
+<meta property="og:url" content="http://yoursite.com/2021/01/10/【学习笔记】利用偏导求解不等式（拉格朗日数乘法）/index.html">
 <meta property="og:site_name" content="Blog | Vishford">
-<meta property="og:description" content="把直到昨天为止的我逐渐杀死。">
+<meta property="og:description" content="偏导概念的引入 在数学中，一个多变量的函数的偏导数，就是它关于其中一个变量的导数而保持其他变量恒定（相对于全导数，在其中所有变量都允许变化）。在一元函数中，导数就是函数的变化率。对于二元函数的“变化率”，由于自变量多了一个，情况就要复杂的多。在 $xOy$ 平面内，当动点由 $P(x0,y0)$ 沿不同方向变化时，函数 $f(x,y)$ 的变化快慢一般来说是不同的，因此就需要研究 $f(x,y)$">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-10T11:39:43.971Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog | Vishford">
-<meta name="twitter:description" content="把直到昨天为止的我逐渐杀死。">
+<meta name="twitter:title" content="【学习笔记】利用偏导求解不等式（拉格朗日数乘法）">
+<meta name="twitter:description" content="偏导概念的引入 在数学中，一个多变量的函数的偏导数，就是它关于其中一个变量的导数而保持其他变量恒定（相对于全导数，在其中所有变量都允许变化）。在一元函数中，导数就是函数的变化率。对于二元函数的“变化率”，由于自变量多了一个，情况就要复杂的多。在 $xOy$ 平面内，当动点由 $P(x0,y0)$ 沿不同方向变化时，函数 $f(x,y)$ 的变化快慢一般来说是不同的，因此就需要研究 $f(x,y)$">
 
 
 
@@ -140,13 +142,13 @@ tpwidget("show");</script>
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/悬线法/"/>
+  <link rel="canonical" href="http://yoursite.com/2021/01/10/【学习笔记】利用偏导求解不等式（拉格朗日数乘法）/"/>
 
 
 
 
 
-  <title>标签: 悬线法 | Blog | Vishford</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>【学习笔记】利用偏导求解不等式（拉格朗日数乘法） | Blog | Vishford</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -165,7 +167,7 @@ tpwidget("show");</script>
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 <a href="https://github.com/Vsh-fd" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -293,82 +295,240 @@ tpwidget("show");</script>
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>悬线法<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/10/【学习笔记】利用偏导求解不等式（拉格朗日数乘法）/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vishford">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/63055547_p0.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog | Vishford">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/10/04/【题解】[ZJOI2007]棋盘制作/" itemprop="url">
-              
-                <span itemprop="name">【题解】[ZJOI2007]棋盘制作</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">【学习笔记】利用偏导求解不等式（拉格朗日数乘法）</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-04T16:13:09+08:00"
-              content="2018-10-04" >
-          10-04
-        </time>
-      </div>
+        <div class="post-meta">
+                  
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-10T19:36:31+08:00">
+                2021-01-10
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i> 误人子弟
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>个
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  611
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/04/【学习笔记】最大子矩阵问题/" itemprop="url">
-              
-                <span itemprop="name">【学习笔记】最大子矩形问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-04T01:51:41+08:00"
-              content="2018-10-04" >
-          10-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="偏导概念的引入"><a href="#偏导概念的引入" class="headerlink" title="偏导概念的引入"></a>偏导概念的引入</h2><blockquote>
+<p>在数学中，一个多变量的函数的偏导数，就是它关于其中一个变量的导数而保持其他变量恒定（相对于全导数，在其中所有变量都允许变化）。<br>在一元函数中，导数就是函数的变化率。对于二元函数的“变化率”，由于自变量多了一个，情况就要复杂的多。<br>在 $xOy$ 平面内，当动点由 $P(x0,y0)$ 沿不同方向变化时，函数 $f(x,y)$ 的变化快慢一般来说是不同的，因此就需要研究 $f(x,y)$ 在 $(x0,y0)$ 点处沿不同方向的变化率。<br>偏导数反映的是函数沿坐标轴正方向的变化率。</p>
+</blockquote>
+<p>——以上内容摘自<a href="https://baike.baidu.com/item/%E5%81%8F%E5%AF%BC%E6%95%B0/5536984?fr=aladdin" target="_blank" rel="noopener">百度百科</a></p>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>求 $z=x^2-2xy+y^3$ 的偏导数 $\frac{\partial z}{\partial x},\frac{\partial z}{\partial y}$</p>
+<ul>
+<li>步骤一：用题中表达式进行替换</li>
+<li>步骤二：把其他字母看成常数</li>
+<li>步骤三：求导</li>
+</ul>
+<blockquote>
+<p>$\frac{\partial z}{\partial x}=\frac{\partial (x^2-2xy+y^3)}{\partial x}=2x-2y$ 即 $\frac{\partial (x^2-2xa+a^3)}{\partial x}=2x-2a$</p>
+<p>$\frac{\partial z}{\partial y}=\frac{\partial (x^2-2xy+y^3)}{\partial y}=-2x+3y^2$ 即 $\frac{\partial (a^2-2ay+y^3)}{\partial y}=-2a+3y^2$</p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>由于偏导数属于高等数学，本文仅简单说明其在高中不等式解题中的应用思路。</p>
+<p>（2011·浙江理）设 $x,y$  为实数，若 $4x^2+y^2+xy=1$ ，则 $2x+y$ 的最大值是 <strong>__</strong> 。</p>
+<blockquote>
+<p>设 $f(x,y,\lambda)=2x+y+\lambda(4x^2+y^2+xy-1)$</p>
+</blockquote>
+<p>由 $4x^2+y^2+xy=1$ 知 $4x^2+y^2+xy-1=0$</p>
+<p>所以 $f(x,y,\lambda)=2x+y+\lambda(4x^2+y^2+xy-1)=2x+y+\lambda ·0=2x+y$ ，跟线性规划一致，可将 $f(x,y,\lambda)$ 看作目标函数。其中 $\lambda$ 可以看成是目标 $2x+y$ 在约束条件 $4x^2+y^2+xy-1=0$ 下可自由伸缩的空间。</p>
+<p><strong>一般地：在约束条件 $h(x,y)=0$ 下，求 $g(x,y)$ 的最值问题，可以令 $f(x,y,\lambda)=g(x,y)+\lambda ·h(x,y)$</strong></p>
+<blockquote>
+<p>得方程组$\begin{cases} \large{\frac{\partial f(x,y,\lambda)}{\partial x}=2+\lambda(8x+y)=0} \\ \\ \large{\frac{\partial f(x,y,\lambda)}{\partial y}=1+\lambda(2y+x)=0} \\  \\ \large{4x^2+y^2+xy=1} \end{cases}$ </p>
+</blockquote>
+<p>一般地，$\begin{cases} \large{\frac{\partial f(x,y,\lambda)}{\partial x}=0} \\ \\ \large{\frac{\partial f(x,y,\lambda)}{\partial y}=0} \\  \\ \large{h(x,y)=0} \end{cases}$ </p>
+<blockquote>
+<p>消元解得唯一解 $2x=y=\frac{\sqrt{10}}{5}$ ，此时 $2x+y$ 取得最大值 $\frac{2\sqrt{10}}{5}$</p>
+</blockquote>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/偏导/" rel="tag"><i class="fa fa-tag"></i> 偏导</a>
+          
+            <a href="/tags/数学/" rel="tag"><i class="fa fa-tag"></i> 数学</a>
+          
+            <a href="/tags/不等式/" rel="tag"><i class="fa fa-tag"></i> 不等式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/29/【杂谈】日语五十音随机测试器/" rel="next" title="【杂谈】日语五十音随机测试器Onoii">
+                <i class="fa fa-chevron-left"></i> 【杂谈】日语五十音随机测试器Onoii
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -376,6 +536,15 @@ tpwidget("show");</script>
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjMzMC8xMjg2NQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -396,8 +565,17 @@ tpwidget("show");</script>
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -551,6 +729,22 @@ tpwidget("show");</script>
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#偏导概念的引入"><span class="nav-number">1.</span> <span class="nav-text">偏导概念的引入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#举例"><span class="nav-number">1.1.</span> <span class="nav-text">举例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">2.</span> <span class="nav-text">应用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=355 src="//music.163.com/outchain/player?type=0&id=2439324576&auto=1&height=430"></iframe>
@@ -702,6 +896,10 @@ tpwidget("show");</script>
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -730,6 +928,17 @@ tpwidget("show");</script>
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

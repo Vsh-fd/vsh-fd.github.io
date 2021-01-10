@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>【学习笔记】利用偏导求解不等式（拉格朗日数乘法）</title>
+      <link href="/2021/01/10/%E3%80%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E5%88%A9%E7%94%A8%E5%81%8F%E5%AF%BC%E6%B1%82%E8%A7%A3%E4%B8%8D%E7%AD%89%E5%BC%8F%EF%BC%88%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%95%B0%E4%B9%98%E6%B3%95%EF%BC%89/"/>
+      <url>/2021/01/10/%E3%80%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E5%88%A9%E7%94%A8%E5%81%8F%E5%AF%BC%E6%B1%82%E8%A7%A3%E4%B8%8D%E7%AD%89%E5%BC%8F%EF%BC%88%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%95%B0%E4%B9%98%E6%B3%95%EF%BC%89/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="偏导概念的引入"><a href="#偏导概念的引入" class="headerlink" title="偏导概念的引入"></a>偏导概念的引入</h2><blockquote><p>在数学中，一个多变量的函数的偏导数，就是它关于其中一个变量的导数而保持其他变量恒定（相对于全导数，在其中所有变量都允许变化）。<br>在一元函数中，导数就是函数的变化率。对于二元函数的“变化率”，由于自变量多了一个，情况就要复杂的多。<br>在 $xOy$ 平面内，当动点由 $P(x0,y0)$ 沿不同方向变化时，函数 $f(x,y)$ 的变化快慢一般来说是不同的，因此就需要研究 $f(x,y)$ 在 $(x0,y0)$ 点处沿不同方向的变化率。<br>偏导数反映的是函数沿坐标轴正方向的变化率。</p></blockquote><p>——以上内容摘自<a href="https://baike.baidu.com/item/%E5%81%8F%E5%AF%BC%E6%95%B0/5536984?fr=aladdin" target="_blank" rel="noopener">百度百科</a></p><h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>求 $z=x^2-2xy+y^3$ 的偏导数 $\frac{\partial z}{\partial x},\frac{\partial z}{\partial y}$</p><ul><li>步骤一：用题中表达式进行替换</li><li>步骤二：把其他字母看成常数</li><li>步骤三：求导</li></ul><blockquote><p>$\frac{\partial z}{\partial x}=\frac{\partial (x^2-2xy+y^3)}{\partial x}=2x-2y$ 即 $\frac{\partial (x^2-2xa+a^3)}{\partial x}=2x-2a$</p><p>$\frac{\partial z}{\partial y}=\frac{\partial (x^2-2xy+y^3)}{\partial y}=-2x+3y^2$ 即 $\frac{\partial (a^2-2ay+y^3)}{\partial y}=-2a+3y^2$</p></blockquote><a id="more"></a><hr><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>由于偏导数属于高等数学，本文仅简单说明其在高中不等式解题中的应用思路。</p><p>（2011·浙江理）设 $x,y$  为实数，若 $4x^2+y^2+xy=1$ ，则 $2x+y$ 的最大值是 <strong>__</strong> 。</p><blockquote><p>设 $f(x,y,\lambda)=2x+y+\lambda(4x^2+y^2+xy-1)$</p></blockquote><p>由 $4x^2+y^2+xy=1$ 知 $4x^2+y^2+xy-1=0$</p><p>所以 $f(x,y,\lambda)=2x+y+\lambda(4x^2+y^2+xy-1)=2x+y+\lambda ·0=2x+y$ ，跟线性规划一致，可将 $f(x,y,\lambda)$ 看作目标函数。其中 $\lambda$ 可以看成是目标 $2x+y$ 在约束条件 $4x^2+y^2+xy-1=0$ 下可自由伸缩的空间。</p><p><strong>一般地：在约束条件 $h(x,y)=0$ 下，求 $g(x,y)$ 的最值问题，可以令 $f(x,y,\lambda)=g(x,y)+\lambda ·h(x,y)$</strong></p><blockquote><p>得方程组$\begin{cases} \large{\frac{\partial f(x,y,\lambda)}{\partial x}=2+\lambda(8x+y)=0} \\ \\ \large{\frac{\partial f(x,y,\lambda)}{\partial y}=1+\lambda(2y+x)=0} \\  \\ \large{4x^2+y^2+xy=1} \end{cases}$ </p></blockquote><p>一般地，$\begin{cases} \large{\frac{\partial f(x,y,\lambda)}{\partial x}=0} \\ \\ \large{\frac{\partial f(x,y,\lambda)}{\partial y}=0} \\  \\ \large{h(x,y)=0} \end{cases}$ </p><blockquote><p>消元解得唯一解 $2x=y=\frac{\sqrt{10}}{5}$ ，此时 $2x+y$ 取得最大值 $\frac{2\sqrt{10}}{5}$</p></blockquote>]]></content>
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 偏导 </tag>
+            
+            <tag> 数学 </tag>
+            
+            <tag> 不等式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>【杂谈】日语五十音随机测试器Onoii</title>
       <link href="/2018/10/29/%E3%80%90%E6%9D%82%E8%B0%88%E3%80%91%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3%E9%9A%8F%E6%9C%BA%E6%B5%8B%E8%AF%95%E5%99%A8/"/>
       <url>/2018/10/29/%E3%80%90%E6%9D%82%E8%B0%88%E3%80%91%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3%E9%9A%8F%E6%9C%BA%E6%B5%8B%E8%AF%95%E5%99%A8/</url>
