@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-10T03:54:50.845Z</updated>
+  <updated>2018-11-02T07:43:23.496Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>【杂谈】日语五十音随机测试器111111111111111111111111111111111111111111111111111111111111111111</title>
-    <link href="http://yoursite.com/2021/01/10/%E3%80%90%E6%9D%82%E8%B0%88%E3%80%91%E6%97%A5%E8%AF%AD%E4%BA%94%E5%8D%81%E9%9F%B3%E9%9A%8F%E6%9C%BA%E6%B5%8B%E8%AF%95%E5%99%A8%20-%20%E5%89%AF%E6%9C%AC/"/>
-    <id>http://yoursite.com/2021/01/10/【杂谈】日语五十音随机测试器 - 副本/</id>
-    <published>2021-01-10T03:54:20.614Z</published>
-    <updated>2021-01-10T03:54:50.845Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>最近在学日语，五十音总是记不住，就写了这个程序帮助记忆</p><p>灵感来自机房某大佬..但他的程序好奇怪啊分数为什么能扣到负啊还不肯改怎么回事啊</p><p>也不公开代码，我只能自己写一个自娱自乐了…</p><p><img src="https://ws1.sinaimg.cn/large/006sjNcEly1fwrl33xql1j32gw1b5b29.jpg" alt=""></p><a id="more"></a><p>会根据我的学习进度更新程序，加入新功能，敬请期待哦</p><h2 id="最近更新："><a href="#最近更新：" class="headerlink" title="最近更新："></a>最近更新：</h2><h3 id="2018-11-2"><a href="#2018-11-2" class="headerlink" title="2018.11.2"></a>2018.11.2</h3><ul><li><a href="/download/Onoii_v0.0.4.exe">Onoii_v0.0.4.exe</a></li></ul><blockquote><p>重构代码前最后一个版本，新增封面与部分细节优化</p></blockquote><h3 id="2018-10-29"><a href="#2018-10-29" class="headerlink" title="2018.10.29"></a>2018.10.29</h3><ul><li><a href="/download/Onoii_v0.0.3.exe">Onoii_v0.0.3.exe</a></li></ul><blockquote><p>新增练习模式与返回主菜单选项，部分细节优化。</p></blockquote><ul><li><a href="/download/Onoii_v0.0.2.exe">Onoii_v0.0.2.exe</a></li></ul><blockquote><p>修复了上个版本restart后的初始化问题，新增五十音图查看与退出功能。</p></blockquote><ul><li>Onoii_v0.0.1.exe</li></ul><blockquote><p>仅支持清音部分，根据假名输入罗马音，现在的版本不适用看罗马音写不出假名的同学 <del>又不能在电脑上手写假名</del>，正在想办法解决…</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;最近在学日语，五十音总是记不住，就写了这个程序帮助记忆&lt;/p&gt;
-&lt;p&gt;灵感来自机房某大佬..但他的程序好奇怪啊分数为什么能扣到负啊还不肯改怎么回事啊&lt;/p&gt;
-&lt;p&gt;也不公开代码，我只能自己写一个自娱自乐了…&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006sjNcEly1fwrl33xql1j32gw1b5b29.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="杂谈" scheme="http://yoursite.com/categories/%E6%9D%82%E8%B0%88/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>【杂谈】日语五十音随机测试器Onoii</title>
